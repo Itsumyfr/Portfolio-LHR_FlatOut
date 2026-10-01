@@ -78,46 +78,14 @@ nav a{
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* Pour ne pas que la section s'étende quand la f1 sort de l'écrant */
-    position: relative;
-    overflow-x: hidden;
-}
-
-#reveal{
-    display: block;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    object-fit: cover;
-
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 0;
-}
-
-#reveal img{
-    position: absolute;
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.reveal_base { 
-    filter: grayscale(1) contrast(1.1);
-}
-
-/* Image du dessus : en couleurs et superposée exactement sur la première */
-.reveal_color{
-    -webkit-mask-image: radial-gradient(circle var(--r, 0px) at var(--x, 50%) var(--y, 50%), #000 40%, transparent 100%);
-            mask-image: radial-gradient(circle var(--r, 0px) at var(--x, 50%) var(--y, 50%), #000 40%, transparent 100%);
+    background-image: url(assets/img/cars-ferrari_f40.jpeg);
+    background-size: cover;
 }
 
 #box{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     z-index: 2;
     flex-direction: column;
     gap: 50px;
@@ -125,27 +93,53 @@ nav a{
 
 #text{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: column;
-    mix-blend-mode: difference;
+    gap: 15px;
+}
+
+.p-sectionHero{
+    color: var(--c-main3);
+    font-size: 25px;
+    text-shadow: 10px 10px 20px 5px 0.5 rgba(0, 0, 0, 0.5);
 }
 
 .h1-sectionHero{
-    font-size: 130px;
+    font-size: 75px;
     color: var(--c-main3);
-    text-shadow: var(--c-main2) 10px 10px;
+    text-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
 }
 
 .h3-sectionHero{
     font-size: 500;
     font-size: 45px;
     color: var(--c-main3);
-    text-shadow: var(--c-main2) 10px 10px;
+    text-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.5);
 }
 
 #button{
+    display: inline-block;        /* Permet de lui donner des dimensions et padding */
+    padding: 10px 30px;           /* Espace interne (hauteur / largeur) */
+    background-color: var(--c-main);    /* Couleur de fond (ex: violet/bleu moderne) */
+    color: var(--c-main3);               /* Couleur du texte */
+    text-decoration: none;        /* Retire le soulignement par défaut */
+    font-weight: 400;             /* Texte en semi-gras */
+    border-radius: 8px;           /* Coins arrondis */
+    cursor: pointer;              /* Curseur sous forme de main */
+    transition: all 0.3s ease;    /* Transition fluide pour l'effet hover */
+}
+
+#button:hover {
+    background-color: var(--c-main3);    /* Couleur un peu plus foncée au survol */
+    color: var(--c-main);
+}
+
+/* Section Teaser ------- */
+#sectionTeaser{
+    min-height: 100vh;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+    background-color: var(--c-main3);
 }

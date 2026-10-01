@@ -1,6 +1,7 @@
 /* Imports ----------- */
 gsap.registerPlugin(ScrollTrigger,Observer,ScrollToPlugin,Draggable,MotionPathPlugin);
 
+/* Effet de Hover sur le Hero
 const el = document.querySelector('#reveal');
 const color = el.querySelector('.reveal_color');
 const RADIUS = 180;
@@ -48,3 +49,5 @@ window.addEventListener('pointermove', (e) => {
 document.documentElement.addEventListener('pointerleave', () =>
   gsap.to(pos, { r: 0, duration: 0.5, ease: 'power3.out', overwrite: 'auto' })
 );
+
+*/
