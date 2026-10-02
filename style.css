@@ -143,3 +143,122 @@ nav a{
     align-items: center;
     background-color: var(--c-main3);
 }
+
+#teaser{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    gap: 50px;
+}
+
+#card{
+    width: 360px;
+    background-color: var(--c-second);
+    border-radius: 32px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card_media{
+    width: 320px;
+    height: 240px;
+    border-radius: 24px;
+    margin-bottom: 5px;
+}
+
+.cardHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.cardHeader a{
+    color: var(--c-main3);
+    text-decoration: none;
+}
+
+#cardButton{
+    display: inline-block;        /* Permet de lui donner des dimensions et padding */
+    padding: 5px 15px;           /* Espace interne (hauteur / largeur) */
+    background-color: #2b2b2b;    /* Couleur de fond (ex: violet/bleu moderne) */
+    color: var(--c-main3);               /* Couleur du texte */
+    text-decoration: none;        /* Retire le soulignement par défaut */
+    font-weight: 400;             /* Texte en semi-gras */
+    border-radius: 8px;           /* Coins arrondis */
+    cursor: pointer;              /* Curseur sous forme de main */
+    transition: all 0.3s ease;
+}
+
+#cardButton:hover{
+    background-color: var(--c-main3);    /* Couleur un peu plus foncée au survol */
+    color: #2b2b2b;
+}
+
+.h2-teaser, .p-teaser{
+    color: var(--c-main3);
+}
+
+.p-teaser{
+    margin-bottom: 30px;
+}
+
+.h2-teaser2{
+    font-size: 15px;
+}
+
+/* Footer ========= */
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: var(--c-main);
+    padding: 15px;
+}
+
+#socials{
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.p-footer1, .p-footer2{
+    color: rgb(254, 255, 249, 0.8);
+    font-size: 17px;
+}
+
+#reseaux{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.media_reseaux{
+    width: 23px;
+}
+
+#midle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.logoFooter{
+    width: 30px;
+}
+
+.h2-footer{
+    color: var(--c-main3);
+    font-size: 25px;
+    transform: translateY(2.5px);
+}
