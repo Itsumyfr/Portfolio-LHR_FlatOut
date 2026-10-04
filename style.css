@@ -141,7 +141,15 @@ nav a{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-color: var(--c-main3);
+    gap: 45px;
+}
+
+.h1-sectionTeaser{
+    color: var(--c-main);
+    font-size: 55px;
+    transform: translateX(-450px);
 }
 
 #teaser{
@@ -211,6 +219,40 @@ nav a{
     font-size: 15px;
 }
 
+/* Page Projets ==== */
+
+/* Section Cinéma */
+#sectionCinema{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.mediaProjtes{
+    width: 50%;
+}
+
+#projet2dream{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 60%;
+}
+
+.h3-sectionProjet, .p-sectionProjet{
+    color: var(--c-main3);
+}
+
+#textCinema{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
 /* Footer ========= */
 footer{
     display: flex;
@@ -250,7 +292,7 @@ footer{
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    gap: 5px;
+    gap: 12.5px;
 }
 
 .logoFooter{
