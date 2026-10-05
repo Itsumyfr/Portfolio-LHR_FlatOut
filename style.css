@@ -35,7 +35,7 @@ html {
     font-display: swap;
 }
 
-h1, h2, h3{
+h1, h2, h3, span{
     font-family: "Syncopate", sans-serif;
 }
 
@@ -171,8 +171,7 @@ nav a{
 }
 
 .card_media{
-    width: 320px;
-    height: 240px;
+    height: 230px;
     border-radius: 24px;
     margin-bottom: 5px;
 }
@@ -223,15 +222,23 @@ nav a{
 
 /* Section Cinéma */
 #sectionCinema{
-    min-height: 100vh;
+    min-height: 130vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: black;
+    flex-direction: column;
+    gap: 75px;
+}
+
+.h1-sectionCinema{
+    font-size: 55px;
+    transform: translateX(-450px);
 }
 
 .mediaProjtes{
     width: 50%;
+    border-radius: 10px;
 }
 
 #projet2dream{
@@ -240,17 +247,171 @@ nav a{
     align-items: center;
     flex-direction: row;
     width: 60%;
+    gap: 15px;
+
+    /* 1. Transparence de fond sombre (effet verre teinté) */
+    background: rgba(255, 255, 255, 0.05);
+  
+    /* 2. Le flou d'arrière-plan (l'effet verre dépoli) */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px); /* Pour la compatibilité Safari */
+  
+    /* 3. Bordure fine et lumineuse pour marquer le relief */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+  
+    /* 4. Ombre douce et brillance interne */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  
+    padding: 24px;
+    transition: all 0.3s ease
 }
 
-.h3-sectionProjet, .p-sectionProjet{
+#projet2dream:hover{
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 40px 0 rgba(112, 0, 255, 0.2); /* Ombre avec touche de violet */
+    transform: translateY(-4px);
+}
+
+.h1-sectionCinema, .h3-sectionCinema, .p-sectionCinema{
     color: var(--c-main3);
 }
 
 #textCinema{
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
+    gap: 10px;
+}
+
+#projetSpot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 60%;
+    gap: 15px;
+
+    /* 1. Transparence de fond sombre (effet verre teinté) */
+    background: rgba(255, 255, 255, 0.05);
+  
+    /* 2. Le flou d'arrière-plan (l'effet verre dépoli) */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px); /* Pour la compatibilité Safari */
+  
+    /* 3. Bordure fine et lumineuse pour marquer le relief */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+  
+    /* 4. Ombre douce et brillance interne */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  
+    padding: 24px;
+    transition: all 0.3s ease
+}
+
+#projetSpot:hover{
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 40px 0 rgba(112, 0, 255, 0.2); /* Ombre avec touche de violet */
+    transform: translateY(-4px);
+}
+
+/* Transition */
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 20px 0;
+  margin: 25px 0;
+}
+
+.marquee-track {
+  display: flex; /* Flexbox évite les bugs de dimension */
+  width: max-content; /* Force la piste à prendre toute la largeur du texte */
+  animation: marquee 15s linear infinite;
+}
+
+.marquee-track span {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--c-main);
+  padding-right: 20px; /* Espace la fin du texte */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Décale exactement de la moitié */
+  }
+}
+
+/* Section Design */
+
+#sectionDesign{
+    min-height: 130vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(52, 52, 52);
+    flex-direction: column;
+    gap: 75px;
+}
+
+.h1-sectionDesign, .h3-sectionDesign, .p-sectionDesign{
+    color: var(--c-main3);
+}
+
+.h1-sectionDesign{
+    font-size: 55px;
+    transform: translateX(-450px);
+}
+
+#appMuique{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 60%;
+    gap: 15px;
+
+    /* 1. Transparence de fond sombre (effet verre teinté) */
+    background: rgba(255, 255, 255, 0.05);
+  
+    /* 2. Le flou d'arrière-plan (l'effet verre dépoli) */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px); /* Pour la compatibilité Safari */
+  
+    /* 3. Bordure fine et lumineuse pour marquer le relief */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+  
+    /* 4. Ombre douce et brillance interne */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  
+    padding: 24px;
+    transition: all 0.3s ease
+}
+
+#appMuique:hover{
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 40px 0 rgba(59, 0, 137, 0.2); /* Ombre avec touche de violet */
+    transform: translateY(-4px);
+}
+
+#textDesign{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
 }
 
 /* Footer ========= */

@@ -51,3 +51,23 @@ document.documentElement.addEventListener('pointerleave', () =>
 );
 
 */
+
+// Fade-in à l'arrivée sur n'importe quelle page
+gsap.from("body", { opacity: 0, duration: 0.5, ease: "power2.out" });
+
+// Animation de sortie au clic sur les liens internes
+document.querySelectorAll('a[href^="projets.html"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault(); // Empêche le saut immédiat
+    const destination = link.getAttribute('href');
+
+    gsap.to("body", {
+      opacity: 0,
+      duration: 0.4,
+      ease: "power2.in",
+      onComplete: () => {
+        window.location.href = destination; // Redirige une fois l'animation finie
+      }
+    });
+  });
+});
