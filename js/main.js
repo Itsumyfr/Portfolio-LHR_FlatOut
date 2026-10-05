@@ -1,6 +1,10 @@
 /* Imports ----------- */
 gsap.registerPlugin(ScrollTrigger,Observer,ScrollToPlugin,Draggable,MotionPathPlugin);
 
+
+/* ==========================================================================
+   1. Page Hero - Effect couleur
+========================================================================== */
 /* Effet de Hover sur le Hero
 const el = document.querySelector('#reveal');
 const color = el.querySelector('.reveal_color');
@@ -75,48 +79,50 @@ document.querySelectorAll('a[href^="projets.html"]').forEach(link => {
   });
 });
 
+
 /* ==========================================================================
    3. Page à propos - Animation
 ========================================================================== */
 // Source Gémini
+// Centrage des 3 blocs au milieu de la section
+gsap.set(['#boxText', '#boxCompetences', '#boxContact'], {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  xPercent: -50,
+  yPercent: -50
+});
+
+// État initial : seul le 1er bloc est visible
+gsap.set(['#boxCompetences', '#boxContact'], { autoAlpha: 0, y: 80 });
+
 const tl2 = gsap.timeline({
-    scrollTrigger: {
-        trigger: '#sectionPres',
-        strat: 'top top',
-        end: "+=800", // distance de scroll nécessaire pour finir la transition
-        pin: true,
-        scrub: 1,
-    }
+  scrollTrigger: {
+    trigger: '#sectionPres',
+    start: 'top top',
+    end: '+=2000',
+    pin: true,
+    scrub: 1
+  }
 });
 
 tl2
-//On fait disparaitre le block déjà présent
-    .to('#boxText', {
-        opacity: 0,
-        y: -50,
-        duration: 1,
-        ease: "power1.inOut" //Cette ligne définit la courbe d'accélération (l'atténuation) de ton animation dans GSAP.
-        //power1 c'est le niveau de l'accelération de l'annimation et inout c'est comment est le moment
-    })
+  // 1. Sortie du bloc 1 (vers le haut)
+  .to('#boxText', { autoAlpha: 0, y: -80, duration: 1, ease: 'power1.inOut' })
 
-//On fait appraitre le bloc compétence
-    .fromTo('#boxCompetences',{
-        opacity: 0, 
-        y: 50
-    },
-    {
-        opacity: 1, 
-        y: -140, 
-        duration: 1,
-        ease: "power1.inOut",
-        onStart: () => { document.querySelector('#boxCompetences').style.pointerEvents = 'all'; }
-    },
-    0.5) // Chevauchement léger pour une transition plus fluide
+  // 2. Entrée du bloc 2 (du bas vers le centre)
+  .to('#boxCompetences', { autoAlpha: 1, y: 0, duration: 1, ease: 'power1.inOut' }, 0.5)
 
-    // 3. (Optionnel) Effet d'apparition en cascade sur les carrés de compétences
-    .from("#boxCompetences .card", {
-        scale: 0.8,
-        opacity: 0,
-        stagger: 0.1,
-        duration: 0.5
-    }, 0.5);
+  // 3. Cartes du bloc 2
+  .from('#boxCompetences .card', {
+    scale: 0.8,
+    opacity: 0,
+    stagger: 0.1,
+    duration: 0.5
+  }, 0.7)
+
+  // 4. Sortie du bloc 2 (vers le haut)
+  .to('#boxCompetences', { autoAlpha: 0, y: -80, duration: 1, ease: 'power1.inOut' }, '+=0.5')
+
+  // 5. Entrée du bloc 3 (du bas vers le centre)
+  .to('#boxContact', { autoAlpha: 1, y: 0, duration: 1, ease: 'power1.inOut' }, '-=0.5');
