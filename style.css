@@ -43,8 +43,6 @@ p, a, button{
     font-family: 'Coolvetica';
 }
 
-/* Design de la page --------- */
-
 /* Header === */
 header{
     background-color: var(--c-main);
@@ -59,10 +57,6 @@ header{
     align-items: center;
 }
 
-#logo{
-    width: 48px;
-}
-
 nav a{
     color: var(--c-main3);
     text-decoration: none;
@@ -70,9 +64,12 @@ nav a{
 
 }
 
-/* Global --------- */
+/* Global ============= */
 
-/* Page Hero ====== */
+/* ==========================================================================
+   1. Page Hero
+   ========================================================================== */
+
 #sectionHero{
     min-height: 100vh;
     display: flex;
@@ -135,7 +132,7 @@ nav a{
     color: var(--c-main);
 }
 
-/* Section Teaser ------- */
+/* Section Teaser ========*/
 #sectionTeaser{
     min-height: 100vh;
     display: flex;
@@ -218,9 +215,42 @@ nav a{
     font-size: 15px;
 }
 
-/* Page Projets ==== */
+/* ==========================================================================
+   2. Page Projets
+   ========================================================================== */
 
-/* Section Cinéma */
+.logoSection{
+    width: 30px;
+}
+
+#infoTag{
+    width: 95.5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+#logo{
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.tag{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+    padding: 5.5px;
+    border-radius: 5px;
+    background-color: var(--c-second);
+}
+
+/* Section Cinéma ========= */
 #sectionCinema{
     min-height: 130vh;
     display: flex;
@@ -319,14 +349,13 @@ nav a{
     transform: translateY(-4px);
 }
 
-/* Transition */
+/* Transition ========= */
 
 .marquee-container {
-  width: 100%;
-  overflow: hidden;
+  max-width: 100vw; /* Empêche de dépasser de l'écran */
+  overflow: hidden; /* Masque tout ce qui sort à droite */
   white-space: nowrap;
-  padding: 20px 0;
-  margin: 25px 0;
+  padding: 20px;
 }
 
 .marquee-track {
@@ -352,7 +381,7 @@ nav a{
   }
 }
 
-/* Section Design */
+/* Section Design ======== */
 
 #sectionDesign{
     min-height: 130vh;
@@ -406,6 +435,39 @@ nav a{
     transform: translateY(-4px);
 }
 
+#identiteVisuel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 60%;
+    gap: 15px;
+
+    /* 1. Transparence de fond sombre (effet verre teinté) */
+    background: rgba(255, 255, 255, 0.05);
+  
+    /* 2. Le flou d'arrière-plan (l'effet verre dépoli) */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px); /* Pour la compatibilité Safari */
+  
+    /* 3. Bordure fine et lumineuse pour marquer le relief */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+  
+    /* 4. Ombre douce et brillance interne */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  
+    padding: 24px;
+    transition: all 0.3s ease
+}
+
+#identiteVisuel:hover{
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 40px 0 rgba(59, 0, 137, 0.2); /* Ombre avec touche de violet */
+    transform: translateY(-4px);
+}
+
 #textDesign{
     display: flex;
     justify-content: flex-start;
@@ -414,7 +476,161 @@ nav a{
     gap: 10px;
 }
 
-/* Footer ========= */
+#sectionSocial{
+    min-height: 130vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    flex-direction: column;
+    gap: 75px;
+}
+
+.h1-sectionSocial, .h3-sectionSocial, .p-sectionSocial{
+    color: var(--c-main3);
+}
+
+.h1-sectionSocial{
+    font-size: 55px;
+    transform: translateX(-450px);
+}
+
+#socialMedia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 60%;
+    gap: 15px;
+
+    /* 1. Transparence de fond sombre (effet verre teinté) */
+    background: rgba(255, 255, 255, 0.05);
+  
+    /* 2. Le flou d'arrière-plan (l'effet verre dépoli) */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px); /* Pour la compatibilité Safari */
+  
+    /* 3. Bordure fine et lumineuse pour marquer le relief */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+  
+    /* 4. Ombre douce et brillance interne */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  
+    padding: 24px;
+    transition: all 0.3s ease
+}
+
+#socialMedia:hover{
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 40px 0 rgba(112, 0, 255, 0.2); /* Ombre avec touche de violet */
+    transform: translateY(-4px);
+}
+
+#textSocial{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#youtube{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 60%;
+    gap: 15px;
+
+    /* 1. Transparence de fond sombre (effet verre teinté) */
+    background: rgba(255, 255, 255, 0.05);
+  
+    /* 2. Le flou d'arrière-plan (l'effet verre dépoli) */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px); /* Pour la compatibilité Safari */
+  
+    /* 3. Bordure fine et lumineuse pour marquer le relief */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+  
+    /* 4. Ombre douce et brillance interne */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  
+    padding: 24px;
+    transition: all 0.3s ease
+}
+
+
+#youtube:hover{
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 40px 0 rgba(112, 0, 255, 0.2); /* Ombre avec touche de violet */
+    transform: translateY(-4px);
+}
+
+/* ==========================================================================
+   3. Page à propos
+   ========================================================================== */
+
+#sectionPres{
+    position: relative;
+    min-height: 100vh;
+    background-color: var(--c-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#moi{
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    transform: translateY(-60.1%);
+    z-index: 0;
+}
+
+.h1-sectionPres{
+    color: var(--c-main3);
+}
+
+.p1-sectionPres, .p2-sectionPres{
+    color: var(--c-main3);
+    margin-bottom: 15px;
+}
+
+#boxText{
+    z-index: 1;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+
+    width: 50%;
+    padding-left: -800px;
+    padding-right: 600px;
+    margin-bottom: 25px;
+    transform: translateY(50%);
+}
+
+#boxCompetences{
+    z-index: 2;
+    opacity: 0;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+
+    gap: 15px;
+    width: 50%;
+    padding-left: -800px;
+    padding-right: 600px;
+    transform: translateY(-50%);
+}
+
+/* ==========================================================================
+   4. Footer
+   ========================================================================== */
 footer{
     display: flex;
     justify-content: space-around;

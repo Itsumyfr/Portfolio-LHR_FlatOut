@@ -52,6 +52,9 @@ document.documentElement.addEventListener('pointerleave', () =>
 
 */
 
+/* ==========================================================================
+   2. Scroll de page ne page
+========================================================================== */
 // Fade-in à l'arrivée sur n'importe quelle page
 gsap.from("body", { opacity: 0, duration: 0.5, ease: "power2.out" });
 
@@ -71,3 +74,49 @@ document.querySelectorAll('a[href^="projets.html"]').forEach(link => {
     });
   });
 });
+
+/* ==========================================================================
+   3. Page à propos - Animation
+========================================================================== */
+// Source Gémini
+const tl2 = gsap.timeline({
+    scrollTrigger: {
+        trigger: '#sectionPres',
+        strat: 'top top',
+        end: "+=800", // distance de scroll nécessaire pour finir la transition
+        pin: true,
+        scrub: 1,
+    }
+});
+
+tl2
+//On fait disparaitre le block déjà présent
+    .to('#boxText', {
+        opacity: 0,
+        y: -50,
+        duration: 1,
+        ease: "power1.inOut" //Cette ligne définit la courbe d'accélération (l'atténuation) de ton animation dans GSAP.
+        //power1 c'est le niveau de l'accelération de l'annimation et inout c'est comment est le moment
+    })
+
+//On fait appraitre le bloc compétence
+    .fromTo('#boxCompetences',{
+        opacity: 0, 
+        y: 50
+    },
+    {
+        opacity: 1, 
+        y: -140, 
+        duration: 1,
+        ease: "power1.inOut",
+        onStart: () => { document.querySelector('#boxCompetences').style.pointerEvents = 'all'; }
+    },
+    0.5) // Chevauchement léger pour une transition plus fluide
+
+    // 3. (Optionnel) Effet d'apparition en cascade sur les carrés de compétences
+    .from("#boxCompetences .card", {
+        scale: 0.8,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.5
+    }, 0.5);
